@@ -1,0 +1,96 @@
+@import "_var";
+
+html {
+  font-size: 15px;
+  background: #FFF;
+}
+body, a, table {
+  font-family: 'Open Sans', sans-serif;
+  color: $font-color;
+}
+a {
+  text-decoration: none;
+}
+p {
+  line-height: 1.6;
+}
+p.readable {
+  & > span {
+    display: block;
+    @media (max-width: 840px) {
+      display: initial;
+    }
+  }
+}
+::-moz-selection {
+  color: #EEE;
+  background: $font-color;
+}
+::selection {
+  color: #EEE;
+  background: $font-color;
+}
+.email {
+  $color: royalblue;
+  padding-bottom: 2px;
+  color: $color;
+  border-bottom: 1px solid $color;
+}
+
+.block_wrap {
+  box-sizing: border-box;
+  margin: 0;
+  width: 100%;
+
+  &.service,
+  &.portfolio,
+  &.contact,
+  &.footer {
+    border-top: 1px solid $light_border_color;
+  }
+}
+.inner_block {
+  margin: 0 auto;
+  width: 70%;
+  max-width: 900px;
+  padding: 5rem 0;
+  position: relative;
+  @media (max-width: $mobile) {
+    width: 80%;
+  }
+  &.footer {
+    text-transform: uppercase;
+    padding: 2rem 0;
+    color: #888;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+}
+
+.h_wrap {
+  margin: 1.4rem 0;
+  overflow: hidden;
+  & > a {
+    overflow: hidden;
+    width: 100%;
+    display: block;
+  }
+  .more {
+    float: right;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    line-height: 2em;
+    border-bottom: 1px solid $light_border_color;
+  }
+}
+
+h2 {
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  margin: 0;
+  .h_wrap & {
+    margin: 0;
+    float: left;
+  }
+}
