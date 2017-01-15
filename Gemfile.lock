@@ -195,7 +195,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  github-pages
+  github-pages (= 114)
+  json
 
 RUBY VERSION
    ruby 2.4.0p0
