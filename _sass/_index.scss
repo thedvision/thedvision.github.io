@@ -46,10 +46,11 @@ ul.cards {
 @media (max-width: $pad) {
   ul.cards {
     li {
-      /* (100% - ($card-margin * ($col - 1)) / $col */
-      width: calc((100% - (4rem * 1)) / 2);
+      width: 100%;
+      margin-bottom: $card-margin;
     }
-    li:nth-child(3n) {margin-right: $card-margin;}
+    li:last-child {margin-bottom: 0;}
+    li:nth-child(3n) {margin-right: 0;}
     li:nth-child(2n) {margin-right: 0;}
   }
 }
