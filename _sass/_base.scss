@@ -42,6 +42,9 @@ p.readable {
   margin: 0;
   width: 100%;
 
+  &.post,
+  &.page,
+  &.about,
   &.service,
   &.portfolio,
   &.contact,
@@ -52,7 +55,7 @@ p.readable {
 .inner_block {
   margin: 0 auto;
   width: 70%;
-  max-width: 900px;
+  max-width: 1100px;
   padding: 5rem 0;
   position: relative;
   @media (max-width: $mobile) {
@@ -65,10 +68,17 @@ p.readable {
     text-align: center;
     font-size: 0.9rem;
   }
+  &.portfolio {
+    padding: 5rem 0 2rem;
+  }
+  &.post,
+  &.page {
+    padding: 2rem 0;
+  }
 }
 
 .h_wrap {
-  margin: 1.4rem 0;
+  margin-bottom: 2rem;
   overflow: hidden;
   & > a {
     overflow: hidden;
@@ -80,18 +90,25 @@ p.readable {
     text-transform: uppercase;
     font-size: 0.85rem;
     line-height: 2em;
-    border-bottom: 1px solid $light_border_color;
+    border-bottom: 1px solid #AAA;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
   }
 }
 
 h2 {
   text-transform: uppercase;
   font-size: 1.4rem;
-  margin: 0;
+  margin: 0 0 2rem;
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
   .h_wrap & {
     margin: 0;
     float: left;
   }
+}
+
+img {
+  width: 100%;
+  display: block;
 }

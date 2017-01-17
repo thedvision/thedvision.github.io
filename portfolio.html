@@ -4,16 +4,13 @@ permalink: /portfolio/
 title: "포트폴리오"
 ---
 {% include header.html %}
-<div class="block_wrap portfolio">
-    <div class="inner_block portfolio">
+<div class="block_wrap page">
+    <div class="inner_block page">
         <div class="h_wrap"><a href="">
             <h2>portfolio</h2>
         </a></div>
         <ul class="portfolios cards">
-            {% for post in site.posts %}<li><a href="{{ post.url }}">
-            <div class="img_wrap"></div>
-            <span class="title">{{ post.title }}</span>
-        </a></li>{% endfor %}
+            {% for page in site.posts %}{% include pf_card.html %}{% endfor %}
         </ul>
     </div>
 </div>

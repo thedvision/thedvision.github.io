@@ -14,21 +14,55 @@ ul.services {
     box-sizing: border-box;
   }
   span.title {
-    font-weight: bold;
     display: inline-block;
     font-size: 1.05em;
     padding-bottom: 2px;
     border-bottom: 1px solid #555;
     margin-bottom: 1rem;
+    font-weight: 700;
   }
   p.desc {
     margin: 0;
   }
 }
 
-$card-margin : 4rem;
-ul.cards {
-  margin: 2rem 0 0 0;
+ul.cards.services {
+  $card-margin : 4rem;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  overflow: hidden;
+  li {
+    float: left;
+    /* (100% - ($card-margin * ($col - 1)) / $col*/
+    width: calc((100% - (4rem * 1)) / 2);
+    margin-bottom: $card-margin;
+    margin-right: $card-margin;
+  }
+  /* nth = $col * n */
+  li:nth-child(2n) {margin-right: 0;}
+  li:nth-child(3) {margin-bottom: 0;}
+  li:nth-child(4) {margin-bottom: 0;}
+}
+
+@media (max-width: $mobile) {
+  $card-margin : 3rem;
+  ul.cards.services {
+    li {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: $card-margin;
+    }
+    li:nth-child(2n) {margin-right: 0;}
+    li:nth-child(3) {margin-bottom: $card-margin;}
+    li:last-child {margin-bottom: 0;}
+  }
+}
+
+
+ul.cards.portfolios {
+  $card-margin : 4rem;
+  margin: 0;
   padding: 0;
   list-style-type: none;
   overflow: hidden;
@@ -36,36 +70,32 @@ ul.cards {
     float: left;
     /* (100% - ($card-margin * ($col - 1)) / $col*/
     width: calc((100% - (4rem * 2)) / 3);
-    margin-bottom: 0;
+    margin-bottom: $card-margin;
     margin-right: $card-margin;
+    & .title {
+      display: block;
+      margin-top: 0.8rem;
+    }
   }
   /* nth = $col * n */
   li:nth-child(3n) {margin-right: 0;}
 }
 
 @media (max-width: $pad) {
-  ul.cards {
+  $card-margin : 3rem;
+  ul.cards.portfolios {
     li {
-      width: 100%;
+      width: calc((100% - (3rem * 1)) / 2);
       margin-bottom: $card-margin;
+      margin-right: $card-margin;
     }
-    li:last-child {margin-bottom: 0;}
-    li:nth-child(3n) {margin-right: 0;}
+
+    li:nth-child(3n) {margin-right: $card-margin;}
     li:nth-child(2n) {margin-right: 0;}
   }
 }
 
-ul.cards.portfolios {
-  li {
-    margin-bottom: 2rem;
-    & .title {
-      display: block;
-      margin-top: 0.8rem;
-    }
-  }
-}
-
-.img_wrap {
+.thumb_wrap {
   box-sizing: border-box;
   border: 1px solid $light_border_color;
   position: relative;
@@ -79,5 +109,12 @@ ul.cards.portfolios {
     position: absolute;
     top: 0;
     left: 0;
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    transition: filter 0.5s, -webkit-filter 0.5s;
+    &:hover, &:active {
+      filter: grayscale(0%);
+      -webkit-filter: grayscale(0%);
+    }
   }
 }
