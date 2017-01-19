@@ -8,6 +8,7 @@ permalink: /:categories/:title/
 published: true
 date: 2017-01-16 09:00:00 +0900
 ---
+
 Blush is an aggregation service for women's fashion items. (Service has been closed)
 
 ### What we did
