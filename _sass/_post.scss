@@ -23,6 +23,18 @@
     width: 100%;
     padding-top: 60%;
   }
+  div.desktop.only {
+    float: initial;
+    overflow-y: hidden;
+    padding-top: 0;
+    width: 100%;
+    & > img {
+      position: initial;
+    }
+    &.non-retina {
+      max-width: 600px;
+    }
+  }
   div.tablet {
     width: 66%;
     padding-top: 86%;
@@ -32,6 +44,18 @@
     width: 31%;
     padding-top: 50%;
     float: right;
+  }
+  div.mobile.only {
+    float: initial;
+    overflow-y: hidden;
+    padding-top: 0;
+    margin-right: 2px;
+    & > img {
+      position: initial;
+    }
+    @media (max-width: $pad) {
+      width: 48%;
+    }
   }
   & > ul,
   & > ol {
