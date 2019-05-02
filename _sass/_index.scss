@@ -1,120 +1,92 @@
-@import "_var";
+@import "vars";
 
-.bg_wrap {
-  position: relative;
-  svg.bg {
-    position: absolute;
-    top: 0;
-    left: 0;
+.pane {
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.company-pane {
+  text-align: center;
+  margin: 15em auto;
+  .company-name {
+    color: $strong-txt-color;
+    font-size: 1.2em;
+    letter-spacing: 0.1em;
+    font-family: "Roboto Slab", serif;
   }
 }
 
-ul.services {
-  li {
-    box-sizing: border-box;
-  }
-  span.title {
+.contact-pane {
+  text-align: center;
+  padding: 5em 0;
+  border: $border;
+
+  .contact {
     display: inline-block;
-    font-size: 1.05em;
-    padding-bottom: 2px;
-    border-bottom: 1px solid #555;
-    margin-bottom: 1rem;
-    font-weight: 700;
-  }
-  p.desc {
-    margin: 0;
+    font-family: "Source Code Pro", monospace;
+    font-weight: 400;
+    color: $strong-txt-color;
   }
 }
 
-ul.cards.services {
-  $card-margin : 4rem;
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  overflow: hidden;
-  li {
-    float: left;
-    /* (100% - ($card-margin * ($col - 1)) / $col*/
-    width: calc((100% - (4rem * 1)) / 2);
-    margin-bottom: $card-margin;
-    margin-right: $card-margin;
-  }
-  /* nth = $col * n */
-  li:nth-child(2n) {margin-right: 0;}
-  li:nth-child(3) {margin-bottom: 0;}
-  li:nth-child(4) {margin-bottom: 0;}
+.tags-pane {
+  text-align: center;
 }
 
-@media (max-width: $mobile) {
-  $card-margin : 3rem;
-  ul.cards.services {
-    li {
-      width: 100%;
-      margin-right: 0;
-      margin-bottom: $card-margin;
+.about-pane {
+  text-align: center;
+  margin: 1rem auto;
+}
+
+.list-pane {
+  margin: 10em auto;
+  h2 {
+    margin-bottom: 2em;
+    letter-spacing: 0.5em;
+    color: $strong-txt-color;
+  }
+  & > ul {
+    & > li {
+      margin-bottom: 2.5em;
     }
-    li:nth-child(2n) {margin-right: 0;}
-    li:nth-child(3) {margin-bottom: $card-margin;}
-    li:last-child {margin-bottom: 0;}
-  }
-}
-
-
-ul.cards.portfolios {
-  $card-margin : 4rem;
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  overflow: hidden;
-  li {
-    float: left;
-    /* (100% - ($card-margin * ($col - 1)) / $col*/
-    width: calc((100% - (4rem * 2)) / 3);
-    margin-bottom: $card-margin;
-    margin-right: $card-margin;
-    & .title {
-      display: block;
-      margin-top: 0.8rem;
+    & > li:last-child {
+      margin-bottom: 0;
+    }
+    & > li .title {
+      color: $point-gold-color;
+      margin-bottom: 0.5em;
     }
   }
-  /* nth = $col * n */
-  li:nth-child(3n) {margin-right: 0;}
 }
 
-@media (max-width: $pad) {
-  $card-margin : 3rem;
-  ul.cards.portfolios {
-    li {
-      width: calc((100% - (3rem * 1)) / 2);
-      margin-bottom: $card-margin;
-      margin-right: $card-margin;
-    }
-
-    li:nth-child(3n) {margin-right: $card-margin;}
-    li:nth-child(2n) {margin-right: 0;}
+.copyright-pane {
+  text-align: center;
+  margin: 5em auto;
+  .copyright {
+    font-size: 0.9em;
+    color: $light-txt-color;
+    text-transform: capitalize;
+  }
+  .company-name {
+    text-transform: uppercase;
   }
 }
 
-.thumb_wrap {
-  box-sizing: border-box;
-  border: 1px solid $light_border_color;
-  position: relative;
+p.description {
+  text-align: left;
+  word-break: keep-all;
+  .about-pane & {
+    text-align: center;
+  }
+}
+
+.tag {
+  font-size: 0.85em;
   &:before {
-    content: '';
-    padding-top: 100%;
-    display: block;
+    content: '#';
+    margin-right: 1px;
   }
-  & > img {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    filter: grayscale(100%);
-    -webkit-filter: grayscale(100%);
-    transition: filter 0.5s, -webkit-filter 0.5s;
-    &:hover, &:active {
-      filter: grayscale(0%);
-      -webkit-filter: grayscale(0%);
-    }
-  }
+
+  margin-right: 0.5em;
+  &:last-child {margin-right: 0;}
 }
