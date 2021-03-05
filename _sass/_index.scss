@@ -62,13 +62,28 @@
 .copyright-pane {
   text-align: center;
   margin: 5em auto;
+
   .copyright {
-    font-size: 0.9em;
-    color: $light-txt-color;
     text-transform: capitalize;
+    color: $light-txt-color;
+    font-size: 0.8em;
   }
   .company-name {
     text-transform: uppercase;
+  }
+  .biz-info {
+    display: flex;
+    justify-content: center;
+    color: $lighter-txt-color;
+    font-size: 0.75em;
+
+    li:not(:last-child) {
+      margin-right: 0.5em;
+    }
+
+    .label {
+      color: #bbb;
+    }
   }
 }
 
@@ -90,3 +105,4 @@ p.description {
   margin-right: 0.5em;
   &:last-child {margin-right: 0;}
 }
+
